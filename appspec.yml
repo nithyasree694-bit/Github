@@ -1,0 +1,12 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /var/www/html
+hooks:
+  BeforeInstall:
+    - location: scripts/install_httpd.sh
+      runas: root
+  ApplicationStart:
+    - location: scripts/start_httpd.sh
+      runas: root
